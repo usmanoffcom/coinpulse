@@ -1,4 +1,4 @@
-import { fetcher } from '@/lib/coingecko.actions';
+import { getCoinMarkets } from '@/lib/coinmarketcap.actions';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,13 +12,10 @@ const Coins = async ({ searchParams }: NextPageProps) => {
   const currentPage = Number(page) || 1;
   const perPage = 10;
 
-  const coinsData = await fetcher<CoinMarketData[]>('/coins/markets', {
-    vs_currency: 'usd',
-    order: 'market_cap_desc',
-    per_page: perPage,
-    page: currentPage,
-    sparkline: 'false',
-    price_change_percentage: '24h',
+  const coinsData = await getCoinMarkets({
+    start: (currentPage - 1) * perPage + 1,
+    limit: perPage,
+    convert: 'USD',
   });
 
   const columns: DataTableColumn<CoinMarketData>[] = [

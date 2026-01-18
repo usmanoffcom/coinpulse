@@ -2,15 +2,16 @@
 
 import { Separator } from '@/components/ui/separator';
 import CandlestickChart from '@/components/CandlestickChart';
-import { useCoinGeckoWebSocket } from '@/hooks/useCoinGeckoWebSocket';
+import { useCoinMarketCapPolling } from '@/hooks/useCoinMarketCapPolling';
 import DataTable from '@/components/DataTable';
 import { formatCurrency, timeAgo } from '@/lib/utils';
 import { useState } from 'react';
 import CoinHeader from '@/components/CoinHeader';
 
 const LiveDataWrapper = ({ children, coinId, poolId, coin, coinOHLCData }: LiveDataProps) => {
-  const [liveInterval, setLiveInterval] = useState<'1s' | '1m'>('1s');
-  const { trades, ohlcv, price } = useCoinGeckoWebSocket({ coinId, poolId, liveInterval });
+  // Free tier updates data every 1 minute, so default to '1m'
+  const [liveInterval, setLiveInterval] = useState<'1s' | '1m'>('1m');
+  const { trades, ohlcv, price } = useCoinMarketCapPolling({ coinId, poolId, liveInterval });
 
   const tradeColumns: DataTableColumn<Trade>[] = [
     {

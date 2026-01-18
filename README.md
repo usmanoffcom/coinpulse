@@ -1,8 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/-vsh_GxC-vg" target="_blank">
-      <img src="public/readme/readme-hero.webp" alt="Project Banner">
-    </a>
+  <h1>CryptoPulse</h1>
   <br />
 
   <div>
@@ -10,16 +8,14 @@
 <img src="https://img.shields.io/badge/-Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/-Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 <img src="https://img.shields.io/badge/-shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white" />
+<img src="https://img.shields.io/badge/-CoinMarketCap-171B26?style=for-the-badge&logo=coinmarketcap&logoColor=white" />
 <img src="https://img.shields.io/badge/-CoinGecko-06D6A0?style=for-the-badge&logo=coingecko&logoColor=white" />
-<img src="https://img.shields.io/badge/-CodeRabbit-FF6B6B?style=for-the-badge&logo=coderabbit&logoColor=white" />
-
-
   </div>
 
   <h3 align="center">CryptoPulse — Analytics Dashboard</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
+     CryptoPulse — Analytics Dashboard by <b>YappiX / Renat Usmanoff</b>
     </div>
 </div>
 
@@ -32,21 +28,15 @@
 5. 🔗 [Assets](#links)
 6. 🚀 [More](#more)
 
-## 🚨 Tutorial
+## 🚨 About
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+This repository contains a cryptocurrency analytics dashboard built with Next.js and CoinMarketCap API integration by **YappiX / Renat Usmanoff**.
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://youtu.be/-vsh_GxC-vg" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+A high-performance platform for tracking crypto markets with real-time data, interactive charts, and comprehensive market analysis.
 
 ## <a name="introduction">✨ Introduction</a>
 
-CryptoPulse is a high-performance analytics dashboard built with Next.js 16, TailwindCSS v4, and shadcn/ui, delivering real-time market intelligence via CoinGecko’s API and WebSockets. It features high-frequency price tracking and live orderbook streams for low-latency updates, paired with interactive TradingView candlestick charts to visualize OHLCV data with surgical precision. From a dynamic homepage showcasing global stats and trending assets to robust token pages with multi-fiat converters and advanced search tables, the platform provides a modular, developer-friendly stack optimized for speed and clarity.
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+CryptoPulse is a high-performance analytics dashboard built with Next.js 16, TailwindCSS v4, and shadcn/ui, delivering real-time market intelligence via CoinMarketCap API with CoinGecko fallback for historical data. It features real-time price tracking, interactive TradingView candlestick charts to visualize OHLCV data, and comprehensive market analysis. From a dynamic homepage showcasing global stats and trending assets to robust token pages with multi-fiat converters and advanced search tables, the platform provides a modular, developer-friendly stack optimized for speed and clarity.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
@@ -58,29 +48,25 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 - **[Shadcn/ui](https://ui.shadcn.com/docs)** is a collection of beautifully-designed, accessible React components that you copy and paste directly into your project (it is not a traditional npm library), giving you full source code ownership and total customization control to build your own design system often utilizing Tailwind CSS.
 
-- **[CodeRabbit](https://jsm.dev/crypto-rabbit)** is an AI-powered code review platform that integrates into Git workflows (like GitHub and GitLab) to automatically analyze pull requests, identifying issues ranging from readability concerns to logic bugs and security flaws, and offering one-click fixes to help teams ship high-quality code faster.
+- **[CodeRabbit](https://coderabbit.ai/)** is an AI-powered code review platform that integrates into Git workflows (like GitHub and GitLab) to automatically analyze pull requests, identifying issues ranging from readability concerns to logic bugs and security flaws, and offering one-click fixes to help teams ship high-quality code faster.
 
-- **[CoinGecko API](https://jsm.dev/crypto-gecko)** is a comprehensive and reliable RESTful API that provides real-time and historical cryptocurrency market data, including prices, market capitalization, volume, and exchange information, enabling developers to build crypto tracking, analysis, and portfolio management applications.
+- **[CoinMarketCap API](https://coinmarketcap.com/api/)** and **[CoinGecko API](https://www.coingecko.com/en/api)** are comprehensive and reliable RESTful APIs that provide real-time and historical cryptocurrency market data, including prices, market capitalization, volume, and exchange information, enabling developers to build crypto tracking, analysis, and portfolio management applications.
 
 - **[TradingView](https://www.tradingview.com/lightweight-charts/)** is a high-performance financial visualization library that provides interactive charting capabilities for rendering complex OHLCV data. It enables the integration of responsive candlestick charts and technical indicators, allowing users to perform professional-grade technical analysis with low-latency updates and surgical precision.
 
 ## <a name="features">🔋 Features</a>
 
-👉 **Home Dashboard**: Displays crucial market health indicators like **Total Market Cap** and **BTC & ETH dominance**, alongside a dynamic list of **Trending Tokens**, all retrieved instantly using the CoinGecko `/global` and `/search/trending` endpoints.
+👉 **Home Dashboard**: Displays crucial market health indicators like **Total Market Cap** and **BTC & ETH dominance**, alongside a dynamic list of **Trending Tokens**, all retrieved instantly using the CoinMarketCap API.
 
-👉 **Token Discovery Page**: A comprehensive, sortable and searchable table featuring key token metrics (Price, 24h change, Market Cap Rank) for mass market analysis, powered by the scalable `/coins/markets` REST API and optimized with pagination for efficient browsing.
+👉 **Token Discovery Page**: A comprehensive, sortable and searchable table featuring key token metrics (Price, 24h change, Market Cap Rank) for mass market analysis, powered by the CoinMarketCap `/v1/cryptocurrency/listings/latest` REST API and optimized with pagination for efficient browsing.
 
-👉 **Detailed Token Overview**: Provides an immediate summary of any selected token, including its logo, current price, and market cap rank, utilizing the `/coins/{id}` REST API for core data and the **CGSimplePrice WebSocket** for continuous, live price monitoring.
+👉 **Detailed Token Overview**: Provides an immediate summary of any selected token, including its logo, current price, and market cap rank, utilizing the CoinMarketCap `/v1/cryptocurrency/quotes/latest` REST API for core data with polling for continuous, live price monitoring.
 
-👉 **Interactive Candlestick Chart**: Integrates **TradingView Lightweight Charts** to visualize market trends and price action with surgical precision, rendering multi-timeframe OHLCV data fetched from CoinGecko’s high-performance market endpoints.
+👉 **Interactive Candlestick Chart**: Integrates **TradingView Lightweight Charts** to visualize market trends and price action with surgical precision, rendering multi-timeframe OHLCV data fetched from CoinGecko Public API (fallback when CoinMarketCap OHLCV is unavailable).
 
-👉 **Real-Time Trades & Orderbook**: Features a live stream of market activity exactly as it happens on the exchange, using low-latency WebSockets to display a constant flow of buy/sell orders and recent trade executions.
+👉 **Smart Currency Converter**: An interactive tool that allows users to instantly compute coin amounts into dozens of supported fiat and crypto currencies, leveraging real-time exchange rates from CoinMarketCap API.
 
-👉 **Smart Currency Converter**: An interactive tool that allows users to instantly compute coin amounts into dozens of supported fiat and crypto currencies, leveraging the `/simple/supported_vs_currencies` and `/simple/price` endpoints for accurate conversions.
-
-👉 **Exchange & Trading Pairs**: Allows users to analyze trading context by displaying aggregated lists of exchanges and available trading pairs, with all data sourced directly from the dedicated `/exchanges` and `/exchanges/{id}/tickers` REST APIs.
-
-👉 **Global Search Functionality**: A powerful, unified search bar that allows users to quickly locate any crypto asset by name or symbol, linking directly to the respective Token Detail Page via the CoinGecko `/search` and `/coins/{id}` REST endpoints.
+👉 **Global Search Functionality**: A powerful, unified search bar that allows users to quickly locate any crypto asset by name or symbol, linking directly to the respective Token Detail Page via the CoinMarketCap API.
 
 And many more, including code architecture and reusability.
 
@@ -99,7 +85,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/coinpulse.git
+git clone https://github.com/usmanoffcom/coinpulse.git
 cd coinpulse
 ```
 
@@ -116,6 +102,11 @@ npm install
 Create a new file named `.env` in the root of your project and add the following content:
 
 ```env
+# CoinMarketCap API (Primary)
+COINMARKETCAP_BASE_URL=https://pro-api.coinmarketcap.com
+COINMARKETCAP_API_KEY=your_api_key_here
+
+# CoinGecko API (Optional - used as fallback for OHLCV data)
 COINGECKO_BASE_URL=https://pro-api.coingecko.com/api/v3
 COINGECKO_API_KEY=
 
@@ -123,7 +114,7 @@ NEXT_PUBLIC_COINGECKO_WEBSOCKET_URL=
 NEXT_PUBLIC_COINGECKO_API_KEY=
 ```
 
-Replace the placeholder values with your real credentials. You can get these by signing up at: [**CoinGecko API**](https://jsm.dev/crypto-gecko).
+Replace the placeholder values with your real credentials. You can get these by signing up at: [**CoinMarketCap API**](https://coinmarketcap.com/api/) and [**CoinGecko API**](https://www.coingecko.com/en/api).
 
 **Running the Project**
 
@@ -133,21 +124,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-## <a name="links">🔗 Assets</a>
+## <a name="links">🔗 Links</a>
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsmastery.com/video-kit/d1bcad71-45c0-477c-82c8-e71ae39ae6f4)**.
-
-<a href="https://jsmastery.com/video-kit/d1bcad71-45c0-477c-82c8-e71ae39ae6f4" target="_blank">
-  <img src="public/readme/readme-videokit.webp" alt="Video Kit Banner">
-</a>
+- **Website**: [yappix.studio](https://yappix.studio)
+- **GitHub**: [github.com/usmanoffcom](https://github.com/usmanoffcom)
+- **Author**: YappiX / Renat Usmanoff
 
 ## <a name="more">🚀 More</a>
 
-**Advance your skills with Next.js Pro Course**
+**Built with ❤️ by YappiX / Renat Usmanoff**
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+This project demonstrates modern web development practices using Next.js, TypeScript, and real-time cryptocurrency market data integration.
 
-<a href="https://jsm.dev/crypto-jsm" target="_blank">
-  <img src="public/readme/readme-jsmpro.webp" alt="Project Banner">
-</a>
+Visit [yappix.studio](https://yappix.studio) for more projects and services.

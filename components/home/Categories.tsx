@@ -1,4 +1,4 @@
-import { fetcher } from '@/lib/coingecko.actions';
+import { getCategories } from '@/lib/coinmarketcap.actions';
 import DataTable from '@/components/DataTable';
 import Image from 'next/image';
 import { cn, formatCurrency, formatPercentage } from '@/lib/utils';
@@ -7,7 +7,12 @@ import { CategoriesFallback } from './fallback';
 
 const Categories = async () => {
   try {
-    const categories = await fetcher<Category[]>('/coins/categories');
+    const categories = await getCategories();
+
+    // Handle empty categories array
+    if (!categories || categories.length === 0) {
+      return <CategoriesFallback />;
+    }
 
     const columns: DataTableColumn<Category>[] = [
       { header: 'Category', cellClassName: 'category-cell', cell: (category) => category.name },
@@ -57,7 +62,7 @@ const Categories = async () => {
 
         <DataTable
           columns={columns}
-          data={categories?.slice(0, 10)}
+          data={categories.slice(0, 10)}
           rowKey={(_, index) => index}
           tableClassName="mt-3"
         />

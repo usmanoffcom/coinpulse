@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetcher, getPools } from '@/lib/coingecko.actions';
+import { getCoinDetails, getCoinOHLCV } from '@/lib/coinmarketcap.actions';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
@@ -10,24 +10,15 @@ const Page = async ({ params }: NextPageProps) => {
   const { id } = await params;
 
   const [coinData, coinOHLCData] = await Promise.all([
-    fetcher<CoinDetailsData>(`/coins/${id}`, {
-      dex_pair_format: 'contract_address',
-    }),
-    fetcher<OHLCData>(`/coins/${id}/ohlc`, {
+    getCoinDetails(id),
+    getCoinOHLCV(id, {
       vs_currency: 'usd',
       days: 1,
       interval: 'hourly',
-      precision: 'full',
     }),
   ]);
 
-  const platform = coinData.asset_platform_id
-    ? coinData.detail_platforms?.[coinData.asset_platform_id]
-    : null;
-  const network = platform?.geckoterminal_url.split('/')[3] || null;
-  const contractAddress = platform?.contract_address || null;
-
-  const pool = await getPools(id, network, contractAddress);
+  const pool = { id: '', address: '', name: '', network: '' };
 
   const coinDetails = [
     {
@@ -65,7 +56,7 @@ const Page = async ({ params }: NextPageProps) => {
   return (
     <main id="coin-details-page">
       <section className="primary">
-        <LiveDataWrapper coinId={id} poolId={pool.id} coin={coinData} coinOHLCData={coinOHLCData}>
+        <LiveDataWrapper coinId={id} poolId={pool.id} coin={coinData} coinOHLCData={Array.isArray(coinOHLCData) ? coinOHLCData : [coinOHLCData]}>
           <h4>Exchange Listings</h4>
         </LiveDataWrapper>
       </section>
