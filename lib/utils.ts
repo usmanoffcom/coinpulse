@@ -16,15 +16,19 @@ export function formatCurrency(
     return showSymbol !== false ? '$0.00' : '0.00';
   }
 
+  // Use explicit 'en-US' locale to ensure consistent formatting on server and client
+  // This prevents hydration mismatches caused by different locale settings
+  const locale = 'en-US';
+
   if (showSymbol === undefined || showSymbol === true) {
-    return value.toLocaleString(undefined, {
+    return value.toLocaleString(locale, {
       style: 'currency',
       currency: currency?.toUpperCase() || 'USD',
       minimumFractionDigits: digits ?? 2,
       maximumFractionDigits: digits ?? 2,
     });
   }
-  return value.toLocaleString(undefined, {
+  return value.toLocaleString(locale, {
     minimumFractionDigits: digits ?? 2,
     maximumFractionDigits: digits ?? 2,
   });
